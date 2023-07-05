@@ -1,0 +1,33 @@
+.bg-main{
+    background: #242A32;
+}
+
+.active-link{
+ opacity: 1;
+}
+
+
+
+a{
+    text-decoration: none;
+    color : #058bd4;
+    opacity: 0.5;
+}
+
+a:hover{
+    text-decoration: none;
+    background-color: gray;
+}
+
+
+
+.link-icon{
+    color: white;
+    height : 2rem;
+    width: 2rem;
+}
+
+.footer{
+    height: 10vh;
+    border-top: 1px solid #058bd4;
+}
