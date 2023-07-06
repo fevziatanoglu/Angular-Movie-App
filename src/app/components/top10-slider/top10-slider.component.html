@@ -4,9 +4,13 @@
 <div class="wrapper d-flex justify-content-between align-items-center ">
 
     <!-- left button -->
-    <button (click)="slideLeftButton()" [disabled]="this.sliderTransform === 0" class="btn fw-bolder mx-2">L</button>
+    <button (click)="slideLeftButton()" [disabled]="this.sliderTransform === 0" class="btn fw-bolder mx-2">
+        <img src="../../../assets/images/ArrowLeft.png">
+    </button>
     <!-- right button -->
-    <button (click)="slideRightButton()" [disabled]="this.sliderTransform === -1750" class="btn  mx-2 fw-bolder">R</button>
+    <button (click)="slideRightButton()" [disabled]="this.sliderTransform === -1750" class="btn  mx-2 fw-bolder">
+        <img src="../../../assets/images/ArrowRight.png">
+    </button>
 
     <!-- slider -->
     <div class="slider d-flex flex-row " [style.transform]=" 'translateX(' +  sliderTransform  + 'px)' ">

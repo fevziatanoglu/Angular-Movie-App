@@ -1,34 +1,35 @@
-
-.backdrop-container{
+.backdrop-container {
     position: relative;
-    height: 35vh;
+    height: 50vh;
+    overflow: hidden;
 }
 
-.backdrop-img{
+.backdrop-img {
     border-radius: 0 0 1rem 1rem;
-    z-index:-1;
+    z-index: -1;
     position: absolute;
     width: 100vw;
     height: auto;
 }
 
-.movie-infos{
+.movie-infos {
     font-size: 1rem;
     color: gray;
 }
 
-.movie-infos img{
+.movie-infos img {
     height: auto;
     width: 2rem;
 }
 
 
-.poster-img{
-    height: 20vh;
+.poster-img {
+    height: 30vh;
     border-radius: 10%;
 }
 
 .tab {
+    font-size: 2rem;
     border-bottom: 2px solid transparent;
 }
 
@@ -41,10 +42,33 @@
     border-bottom: 2px solid #058bd4;
 }
 
-.comment{
+
+.is-show {
+    display: flex;
+}
+
+
+
+
+@media (max-width: 767px) {
+
+    .backdrop-container {
+        position: relative;
+        height: 35vh;
+        overflow: hidden;
+    }
+
+    .tab {
+        font-size: 1rem;
+    }
+
+    .comment {
     font-size: .6rem;
 }
 
-.is-show{
-    display: flex;
+.poster-img {
+    height: 20vh;
+}
+
+
 }

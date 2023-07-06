@@ -31,13 +31,21 @@
 }
 
 button{
+    height: 10vh;
+    width: auto;
     z-index: 1;
-    color:  #058bd4;
-    background-color: rgba(245, 222, 179, 0.537);
+}
+
+button img{
+    height: 100%;
 }
 
 button:hover{
-    background-color: blue;
+    background-color: rgba(255, 255, 255, 0.332);
+}
+
+button:disabled{
+    border: none;
 }
 
 
