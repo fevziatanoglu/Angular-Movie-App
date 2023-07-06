@@ -7,6 +7,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { Top10SliderComponent } from './components/top10-slider/top10-slider.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     SearchComponent,
     DetailsComponent,
-    FooterComponent
+    FooterComponent,
+    Top10SliderComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

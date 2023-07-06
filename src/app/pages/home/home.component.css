@@ -1,0 +1,15 @@
+.bg-main{
+    background: #242A32;
+}
+
+
+input{
+    background-color: rgb(61, 61, 61);
+    color: white;
+    border-radius: 1rem;
+    border:none;
+}
+
+input::placeholder{
+    color: gray;
+}
