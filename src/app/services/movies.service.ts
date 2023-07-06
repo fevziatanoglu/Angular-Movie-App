@@ -28,4 +28,12 @@ export class MoviesService {
   getMoviesByCategory(category: string){
     return this.http.get<any>(`https://api.themoviedb.org/3/movie/${category}?api_key=` + this.apiKey)
   }
+
+  getDetailsById(movieId: string){
+    return this.http.get<any>(`https://api.themoviedb.org/3/movie/${movieId}language=en-US?api_key=` + this.apiKey)
+  }
+
+  getReviewById(movieId: string){
+    return this.http.get<any>(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=` + this.apiKey)
+  }
 }

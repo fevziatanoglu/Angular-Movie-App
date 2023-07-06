@@ -1,0 +1,50 @@
+
+.backdrop-container{
+    position: relative;
+    height: 35vh;
+}
+
+.backdrop-img{
+    border-radius: 0 0 1rem 1rem;
+    z-index:-1;
+    position: absolute;
+    width: 100vw;
+    height: auto;
+}
+
+.movie-infos{
+    font-size: 1rem;
+    color: gray;
+}
+
+.movie-infos img{
+    height: auto;
+    width: 2rem;
+}
+
+
+.poster-img{
+    height: 20vh;
+    border-radius: 10%;
+}
+
+.tab {
+    border-bottom: 2px solid transparent;
+}
+
+.tab:hover {
+    cursor: pointer;
+    background-color: #058bd4;
+}
+
+.active-tab {
+    border-bottom: 2px solid #058bd4;
+}
+
+.comment{
+    font-size: .6rem;
+}
+
+.is-show{
+    display: flex;
+}

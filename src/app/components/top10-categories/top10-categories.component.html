@@ -1,10 +1,10 @@
-<div class="">
+
 
     <!-- categories tab -->
     <div class="row row-cols-4 justify-content-lg-between justify-content-around">
 
         <div class="tab fw-bold text-light d-flex justify-content-center py-3" *ngFor="let category of categories"
-            (click)="setCategory(category.tag)" [class.active-tag]="isTagActive(category.tag)">
+            (click)="setCategory(category.tab)" [class.active-tab]="isTagActive(category.tab)">
             {{category.title}} </div>
     </div>
 
@@ -15,5 +15,3 @@
             <!-- {{movie.title}} -->
         </a>
     </div>
-
-</div>

@@ -8,7 +8,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class Top10CategoriesComponent {
 
-  categories: any[] = [{ title: "Popular", tag: "popular" }, { title: "Top Rated", tag: "top_rated" }, { title: "Now Playing", tag: "now_playing" }, { title: "Up Coming", tag: "upcoming" }];
+  categories: any[] = [{ title: "Popular", tab: "popular" }, { title: "Top Rated", tab: "top_rated" }, { title: "Now Playing", tab: "now_playing" }, { title: "Up Coming", tab: "upcoming" }];
   currentCategory: string = "popular";
 
   movies: any[] = [];
