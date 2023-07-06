@@ -9,6 +9,7 @@ import { DetailsComponent } from './pages/details/details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Top10SliderComponent } from './components/top10-slider/top10-slider.component';
+import { Top10CategoriesComponent } from './components/top10-categories/top10-categories.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { Top10SliderComponent } from './components/top10-slider/top10-slider.com
     DetailsComponent,
     FooterComponent,
     Top10SliderComponent,
+    Top10CategoriesComponent,
   ],
   imports: [
     BrowserModule,

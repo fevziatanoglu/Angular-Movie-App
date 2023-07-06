@@ -1,0 +1,19 @@
+<div class="">
+
+    <!-- categories tab -->
+    <div class="row row-cols-4 justify-content-lg-between justify-content-around">
+
+        <div class="tab fw-bold text-light d-flex justify-content-center py-3" *ngFor="let category of categories"
+            (click)="setCategory(category.tag)" [class.active-tag]="isTagActive(category.tag)">
+            {{category.title}} </div>
+    </div>
+
+    <!-- films -->
+    <div class=" row row-cols-1 gap-lg-5  justify-content-center  py-5 ">
+        <a *ngFor="let movie of movies" class="movie-item my-2" href="details/{{movie.id}}">
+            <img class="bg-light" alt="movieimg" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
+            <!-- {{movie.title}} -->
+        </a>
+    </div>
+
+</div>

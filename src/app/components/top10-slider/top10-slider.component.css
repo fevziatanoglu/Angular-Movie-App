@@ -1,6 +1,5 @@
 .wrapper {
     overflow: hidden;
-    /* background-color: red; */
     position: relative;
     height: fit-content;
     height: 50vh;
@@ -15,8 +14,8 @@
 }
 
 .slider-movie-item {
-    height: auto;
     width: 15vw;
+    height: auto;
     border: 1px solid rgba(255, 255, 255, 0);
 }
 
@@ -38,21 +37,23 @@ button{
 }
 
 button:hover{
-    background-color:  #058bd4;
+    background-color: blue;
 }
 
 
 @media (max-width: 767px) {
 
     .wrapper {
-        height: 30vh;
+        height: 40vh;
     }
 
-    .slider {
+    /* .slider {
         height: 30vh;
-    }
+        width: auto;
+    } */
 
     .slider-movie-item {
         width: 45vw;
+        height: auto;
     }
 }

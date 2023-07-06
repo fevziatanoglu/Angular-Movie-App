@@ -19,7 +19,7 @@ const routes: Routes = [
     component: SearchComponent,
   },
   {
-    path: "whatchlist",
+    path: "details/:id",
     component: DetailsComponent,
   },
 ];
