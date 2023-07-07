@@ -10,7 +10,7 @@ input::placeholder{
     color: gray;
 }
 
-button{
+.search-button{
     background-color: rgb(61, 61, 61);
     color: white;
     border-radius: 0 1rem 1rem 0;

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  
+  query: string = '';
+
+  setQuery(query: string){
+    this.query = query;
+  }
 
 }

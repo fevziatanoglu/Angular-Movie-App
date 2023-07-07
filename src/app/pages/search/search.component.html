@@ -20,7 +20,7 @@
     <!-- search input -->
     <div class="d-flex flex-row  align-items-stretch mt-5 px-3 input-group mb-3">
         <!-- input -->
-        <input #searchInput (keyup)="setSearchString(searchInput.value)" class="col-10 p-3 " type="text"
+        <input #searchInput value={{this.searchString}} (keyup)="setSearchString(searchInput.value)" class="col-10 p-3 " type="text"
             placeholder="Search" aria-describedby="basic-addon2">
         <!-- submit -->
         <button class="btn btn-outline-secondary col-2 d-flex flex-column  align-items-center justify-content-center"

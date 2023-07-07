@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -54,17 +55,22 @@ export class SearchComponent {
   ];
   isNoResult: boolean = false;
 
-  constructor(private dataService: MoviesService) {
-
+  constructor(private dataService: MoviesService , private route: ActivatedRoute) {
+   
   }
 
   ngOnInit() {
+    this.route.params.subscribe(params => this.searchString = params["query"]);
+    if(this.searchString){
+      this.search();
+    }
+
     // this.search("Fight");
   }
 
 
-  search(query: string) {
-    this.dataService.searchMovie(query).subscribe(data => {
+  search() {
+    this.dataService.searchMovie(this.searchString).subscribe(data => {
       this.searchMovies = data.results.slice(0, 5);
       console.log(this.searchMovies);
 
@@ -80,7 +86,7 @@ export class SearchComponent {
   handleSearch() {
 
     if (this.searchString.length > 1) {
-      this.search(this.searchString);
+      this.search();
     }
 
     console.log(this.isNoResult)
