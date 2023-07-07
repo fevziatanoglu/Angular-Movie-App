@@ -18,14 +18,62 @@
 
 
     <!-- search input -->
-    <form class="d-flex flex-row  align-items-stretch mt-5 px-3 input-group mb-3">
-            <!-- input -->
-            <input class="col-10 py-2 px-4 " type="text"  placeholder="Search" 
-                aria-describedby="basic-addon2">
-           <!-- submit -->
-                <button class="btn btn-outline-secondary col-2 d-flex flex-column  align-items-center justify-content-center" type="submit">
-                    <img src="../../../assets/images/SearchButton.png">
-                </button>
-    </form>
+    <div class="d-flex flex-row  align-items-stretch mt-5 px-3 input-group mb-3">
+        <!-- input -->
+        <input #searchInput (keyup)="setSearchString(searchInput.value)" class="col-10 p-3 " type="text"
+            placeholder="Search" aria-describedby="basic-addon2">
+        <!-- submit -->
+        <button class="btn btn-outline-secondary col-2 d-flex flex-column  align-items-center justify-content-center"
+            (click)="handleSearch()">
+            <img src="../../../assets/images/SearchButton.png">
+        </button>
+    </div>
 
+    <!-- search movies div-->
+    <div class=" d-flex flex-column gap-5 p-4">
+
+        <!-- movie -->
+        <a class="moive-item d-flex flex-row justify-content-start gap-3 " *ngFor="let movie of searchMovies" href="details/{{movie.id}}">
+            <img class="movie-img" src="https://image.tmdb.org/t/p/original/{{movie?.poster_path}}" alt="poster">
+
+            <div class="d-flex flex-column align-items-lg-center gap-2 w-100">
+                <h1>{{movie.title}}</h1>
+
+                <div class="d-flex  gap-1" style="color: #cd720b;">
+                    <img class="icon-img" src="../../../assets/images/Star.png" alt="icon">
+                    {{movie?.vote_average.toFixed(2)}}
+                </div>
+
+                <div class="d-flex  gap-1">
+                    <img class="icon-img" src="../../../assets/images/CalendarBlank.png" alt="icon">
+                    {{movie?.release_date.slice(0,4) || "Year"}}
+                </div>
+
+                <div class="d-flex   gap-1">
+                    <img class="icon-img" src="../../../assets/images/Clock.png" alt="icon">
+                    {{movie?.runtime || "Minutes"}}
+                </div>
+
+                <div class="d-flex   gap-1">
+                    <img class="icon-img" src="../../../assets/images/Ticket.png" alt="icon">
+                    {{movie?.genre || "Genre" }}
+                </div>
+
+
+
+            </div>
+
+        </a>
+
+
+        <!-- no result div -->
+        <div *ngIf="isNoResult" [style.display]="'none'"
+            class=" not-found-div p-5  d-flex flex-column justify-content-center align-items-center text-center">
+            <img src="../../../assets/images/NoResult.png">
+            <h1 class="text-light">We Are Sorry , We Can Not Find The Movie :(</h1>
+            <p class="text-secondary px-2">Find your movie by Type, Title, Categories, Year, etc.</p>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
 </div>
