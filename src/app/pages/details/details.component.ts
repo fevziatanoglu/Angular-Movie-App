@@ -16,6 +16,8 @@ export class DetailsComponent {
   tabs: string[] = ["About Movie", "Reviews", "Cast"]
   currentTab: string = "About Movie";
 
+  savedMovies: any[] = [];
+
   constructor(private dataService: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -25,20 +27,42 @@ export class DetailsComponent {
   }
 
   getDetails(id: string) {
-    this.dataService.getDetailsById(id).subscribe(data => { this.movie = data; })
+    this.dataService.getDetailsById(id).subscribe(data => { this.movie = data; console.log(data); })
   }
 
   getReview(id: string) {
     this.dataService.getReviewById(id).subscribe(data => { console.log(data); this.reviews = data.results });
   }
-  
 
-  isTabActive(tab:string):boolean{
+
+  isTabActive(tab: string): boolean {
     return this.currentTab === tab;
   }
 
-  setTab(tab:string){
+  setTab(tab: string) {
     this.currentTab = tab;
   }
+
+  addMovieLocalStorage() {
+    this.savedMovies = JSON.parse(localStorage.getItem("movies") || "[]");
+    if (this.savedMovies.includes(this.movieId)) {
+      console.log("Movie removed saved movies")
+      this.savedMovies = this.savedMovies.filter(movieId => movieId !== this.movieId );
+    } else {
+      this.savedMovies.push(this.movieId);
+      console.log("Movie added saved movies");
+    }
+    localStorage.setItem('movies', JSON.stringify(this.savedMovies));
+  }
+
+
+
+
+
+
+
+
+
+
 
 }
