@@ -22,7 +22,7 @@ export class Top10CategoriesComponent {
   }
 
   getMovies(category: string) {
-    this.dataService.getMoviesByCategory(category).subscribe(data => { this.movies = data.results.slice(0, 10); console.log(this.movies) });
+    this.dataService.getMoviesByCategory(category).subscribe(data => { this.movies = data.results.slice(0, 10); console.log(this.movies); });
   }
 
   setCategory(category: string) {

@@ -8,8 +8,9 @@
     border-radius: 0 0 1rem 1rem;
     z-index: -1;
     position: absolute;
-    width: 100vw;
+    width: 40vw;
     height: auto;
+    
 }
 
 .movie-infos {
@@ -56,6 +57,10 @@
         position: relative;
         height: 35vh;
         overflow: hidden;
+    }
+
+    .backdrop-img{
+        width: 100vw;
     }
 
     .tab {

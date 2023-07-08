@@ -9,7 +9,7 @@
     </div>
 
     <!-- films -->
-    <div class=" row row-cols-1 gap-lg-5  justify-content-center  py-5 ">
+    <div class=" row row-cols-1 gap-lg-5  justify-content-between  py-5 ">
         <a *ngFor="let movie of movies" class="movie-item my-2" href="details/{{movie.id}}">
             <img class="bg-light" alt="movieimg" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
             <!-- {{movie.title}} -->

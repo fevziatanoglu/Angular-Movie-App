@@ -21,6 +21,8 @@ export class DetailsComponent {
   constructor(private dataService: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.savedMovies = JSON.parse(localStorage.getItem("movies") || "[]");
+    
     this.route.params.subscribe(params => this.movieId = params["id"]);
     this.getDetails(this.movieId);
     this.getReview(this.movieId);
@@ -44,9 +46,8 @@ export class DetailsComponent {
   }
 
   addMovieLocalStorage() {
-    this.savedMovies = JSON.parse(localStorage.getItem("movies") || "[]");
     if (this.savedMovies.includes(this.movieId)) {
-      console.log("Movie removed saved movies")
+      console.log("Movie removed saved movies");
       this.savedMovies = this.savedMovies.filter(movieId => movieId !== this.movieId );
     } else {
       this.savedMovies.push(this.movieId);

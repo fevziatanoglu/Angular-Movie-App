@@ -9,7 +9,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class Top10SliderComponent {
 
   top10: any[] = [];
-  sliderTransform : number = 0;
+  sliderTransform: number = 0;
 
   constructor(private dataService: MoviesService) {
 
@@ -20,7 +20,6 @@ export class Top10SliderComponent {
   }
 
   getTop10() {
-    console.log("test");
     this.dataService.getTopMovies().subscribe((data: any) => { console.log(data); this.top10 = data.results.slice(0, 10); });
   }
 
@@ -33,7 +32,6 @@ export class Top10SliderComponent {
 
   slideRightButton() {
     if (this.sliderTransform > -1750) {
-      console.log("slide right")
       this.sliderTransform -= 250;
     }
   }

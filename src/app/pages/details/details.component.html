@@ -8,7 +8,17 @@
         <!-- header title -->
         <h3 class="fw-bold text-light">Detail</h3>
         <!-- add whatchlist button -->
-        <div (click)="addMovieLocalStorage()"><img src="../../../assets/images/AddWhatchList.png"></div>
+        <div (click)="addMovieLocalStorage()">
+           
+            <img *ngIf="savedMovies.includes(this.movieId)" src="../../../assets/images/AddWhatchList.png">
+            
+            <img style="height: 1.5rem;" *ngIf="!savedMovies.includes(this.movieId)" src="../../../assets/images/Star.png">
+          
+
+
+
+
+        </div>
 
     </div>
 
@@ -68,8 +78,8 @@
                 </div>
                 <!-- name and comment -->
                 <div class="d-flex flex-column justify-content-center align-items-start">
-                      <div class="fw-bold">{{review.author}}</div>
-                <div class="comment">{{review.content.slice(0,150) + "..."}}</div>
+                    <div class="fw-bold">{{review.author}}</div>
+                    <div class="comment">{{review.content.slice(0,150) + "..."}}</div>
                 </div>
             </div>
         </div>
