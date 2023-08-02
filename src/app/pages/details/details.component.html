@@ -3,17 +3,17 @@
     <div class="d-flex flex-row justify-content-between align-items-center px-3 d-flex d-md-none">
         <!-- return button -->
         <a href="/home">
-            <img src="../../../assets/images/ArrowLeft.png" alt="leftarrow">
+            <img src="../../../assets/images/Arrow-Left.svg" alt="leftarrow">
         </a>
         <!-- header title -->
         <h3 class="fw-bold text-light">Detail</h3>
         <!-- add whatchlist button -->
         <div (click)="addMovieLocalStorage()">
 
-            <img *ngIf="savedMovies.includes(this.movieId)" src="../../../assets/images/AddWhatchList.png">
+            <img *ngIf="savedMovies.includes(this.movieId)" src="../../../assets/images/Save-Button.svg">
 
             <img style="height: 1.5rem;" *ngIf="!savedMovies.includes(this.movieId)"
-                src="../../../assets/images/Star.png">
+                src="../../../assets/images/Star.svg">
 
 
 
@@ -37,17 +37,17 @@
     <div class="movie-infos d-flex flex-row gap-2  row-cols-3 align-items-center justify-content-center  px-5  ">
 
         <div class="d-flex justify-content-center align-items-center gap-1">
-            <img src="../../../assets/images/CalendarBlank.png" alt="icon">
+            <img src="../../../assets/images/CalendarBlank.svg" alt="icon">
             {{movie.release_date.slice(0,4)}}
         </div>
 
         <div class="d-flex justify-content-center align-items-center  gap-1">
-            <img src="../../../assets/images/Clock.png" alt="icon">
+            <img src="../../../assets/images/Clock.svg" alt="icon">
             {{movie.runtime +" min" }}
         </div>
 
         <div class="d-flex justify-content-center align-items-center  gap-1">
-            <img src="../../../assets/images/Ticket.png" alt="icon">
+            <img src="../../../assets/images/Ticket.svg" alt="icon">
             {{movie.genres[0].name}}
         </div>
     </div>

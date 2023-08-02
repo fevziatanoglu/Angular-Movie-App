@@ -1,9 +1,8 @@
 
 input{
     background-color: rgb(61, 61, 61);
-    color: white;
-    border-radius: 1rem;
-    border:none;
+    border-radius: 1rem 0 0 1rem !important;
+    border: none;
 }
 
 input::placeholder{

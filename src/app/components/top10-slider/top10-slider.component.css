@@ -4,7 +4,7 @@
     height: fit-content;
     height: 60vh;
     width: 100%;
-    padding: 15px;
+    /* padding: 15px; */
 }
 
 .slider {
@@ -12,6 +12,7 @@
     position: absolute;
     /* height: fit-content; */
     gap: 5vw;
+    padding: 15px;
 }
 
 
@@ -20,10 +21,13 @@ button{
     height: 10vh;
     width: auto;
     z-index: 1;
+    background : rgba(255, 255, 255, 0.1);
+    
 }
 
 button img{
     height: 100%;
+    
 }
 
 button:hover{
