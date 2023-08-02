@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MovieItem } from 'src/app/models/movieItem';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class Top10CategoriesComponent {
   categories: any[] = [{ title: "Popular", tab: "popular" }, { title: "Top Rated", tab: "top_rated" }, { title: "Now Playing", tab: "now_playing" }, { title: "Up Coming", tab: "upcoming" }];
   currentCategory: string = "popular";
 
-  movies: any[] = [];
+  movies: MovieItem[] = [];
 
   constructor(private dataService: MoviesService) {
 
@@ -22,7 +23,7 @@ export class Top10CategoriesComponent {
   }
 
   getMovies(category: string) {
-    this.dataService.getMoviesByCategory(category).subscribe(data => { this.movies = data.results.slice(0, 10); console.log(this.movies); });
+    this.dataService.getMoviesByCategory(category).subscribe(data => {  this.movies = data.results;  });
   }
 
   setCategory(category: string) {

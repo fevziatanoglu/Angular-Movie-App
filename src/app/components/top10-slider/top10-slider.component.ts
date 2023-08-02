@@ -20,7 +20,7 @@ export class Top10SliderComponent {
   }
 
   getTop10() {
-    this.dataService.getTopMovies().subscribe((data: any) => { console.log(data); this.top10 = data.results.slice(0, 10); });
+    this.dataService.getMoviesByCategory("popular").subscribe((data: any) => { this.top10 = data.results.slice(0, 10); });
   }
 
 

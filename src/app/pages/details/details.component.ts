@@ -35,6 +35,7 @@ export class DetailsComponent {
     this.isLoading = true;
     this.dataService.getDetailsById(id).subscribe((data: any) => {
       this.movie = data;
+      console.log(this.movie);
       this.isLoading = false;
     })
 
@@ -44,7 +45,6 @@ export class DetailsComponent {
     this.isLoading = true;
     this.dataService.getReviewById(id).subscribe((data:any) => {
       this.reviews = data.results;
-      console.log(this.reviews);
       this.isLoading = false;
     });
   }
