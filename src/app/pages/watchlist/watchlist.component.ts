@@ -9,8 +9,8 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class WatchlistComponent {
 
-  savedMovies: any[] = [];
-  movies: any[] = [];
+  savedMovies: string[] = [];
+  movies: MovieDetails[] = [];
 
   isLoading: boolean = false;
 

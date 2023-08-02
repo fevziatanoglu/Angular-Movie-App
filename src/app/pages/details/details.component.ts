@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Cast } from 'src/app/models/movieCredits';
 import { MovieDetails } from 'src/app/models/movieDetails';
 import { Review } from 'src/app/models/movieReview';
 import { MoviesService } from 'src/app/services/movies.service';
@@ -14,12 +15,13 @@ export class DetailsComponent {
   movie!: MovieDetails;
   movieId: string = "";
   reviews: Review[] = [];
+  casts : Cast[] = [];
 
   headerTitle : string = "Details"
   headerButtonImg : string = "../../../assets/images/Save-Button.svg"
 
   tabs: string[] = ["About Movie", "Reviews", "Cast"]
-  currentTab: string = "About Movie";
+  currentTab: string = "Cast";
 
   savedMovies: string[] = [];
   isLoading: boolean = false;
@@ -33,6 +35,7 @@ export class DetailsComponent {
  
     this.getDetails(this.movieId);
     this.getReview(this.movieId);
+    this.getCredits(this.movieId);
   }
 
   getDetails(id: string) {
@@ -50,6 +53,13 @@ export class DetailsComponent {
       this.reviews = data.results;
       this.isLoading = false;
     });
+  }
+
+  getCredits(id: string) {
+    this.dataService.getCreditsById(id).subscribe((data:any) => {
+      this.casts = data.cast.slice(0,10);
+      console.log(this.casts);
+    })
   }
 
 

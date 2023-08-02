@@ -29,6 +29,12 @@
     border-radius: 10%;
 }
 
+.cast-img{
+    border-radius : 10rem;
+    height: 50vh;
+    
+}
+
 .tab {
     font-size: 2rem;
     border-bottom: 2px solid transparent;
@@ -44,9 +50,11 @@
 }
 
 
+
 .is-show {
     display: flex;
 }
+
 
 
 
@@ -75,5 +83,8 @@
     height: 20vh;
 }
 
+.cast-img {
+    height : 20vh;
+}
 
 }

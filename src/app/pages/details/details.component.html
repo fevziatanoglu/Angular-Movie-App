@@ -1,8 +1,9 @@
-<app-loading-screen [isLoading]="isLoading"/>
+<app-loading-screen [isLoading]="isLoading" />
 
 <div class="d-flex flex-column  justify-content-start  gap-4 py-3">
     <!-- details header -->
-    <app-header [title]=this.headerTitle [buttonImgUrl]=this.headerButtonImg (buttonFunction)="addMovieLocalStorage()" />
+    <app-header [title]=this.headerTitle [buttonImgUrl]=this.headerButtonImg
+        (buttonFunction)="addMovieLocalStorage()" />
 
     <!-- movie title div -->
     <div class="backdrop-container d-flex flex-row  justify-content-around align-items-end px-3">
@@ -47,10 +48,10 @@
     <div class="text-light p-2 px-3">
 
         <!-- about movie -->
-        <div *ngIf="isTabActive('About Movie')" [style.display]="'flex'" class="">{{movie.overview}}</div>
+        <div *ngIf="isTabActive('About Movie')" class="">{{movie.overview}}</div>
 
         <!-- reviews -->
-        <div *ngIf="isTabActive('Reviews')" [style.display]="'flex'" class="d-flex flex-column gap-4">
+        <div *ngIf="isTabActive('Reviews')" class="d-flex flex-column gap-4">
             <!-- review -->
             <div *ngFor="let review of reviews?.slice(0,3)" class="d-flex flex-row gap-5">
                 <!-- img and rate -->
@@ -66,7 +67,21 @@
             </div>
         </div>
         <!-- cast -->
-        <div *ngIf="isTabActive('Cast')" [style.display]="'flex'"></div>
+        <div *ngIf="isTabActive('Cast')">
+
+            <div class="row row-cols-5 d-flex justify-content-center align-items-center gap-5 ">
+                <div *ngFor="let cast of casts"
+                    class="d-flex flex-column justify-content-center align-items-center gap-2">
+                    <img class="cast-img" src="https://image.tmdb.org/t/p/original{{cast.profile_path}}"
+                        alt="actor-img">
+                    <div class="text-center" >
+                        <p class="fs-1 text-light">{{cast.original_name}}</p>
+                        <p class="fs-5 text-secondary">{{cast.character}}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 
 
