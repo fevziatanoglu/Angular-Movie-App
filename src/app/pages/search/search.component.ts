@@ -16,6 +16,8 @@ export class SearchComponent {
   headerTitle : string = "Search";
   headerButtonImg : string = "../../../assets/images/Info-Button.svg";
 
+  isLoading : boolean = false;
+
   constructor(private dataService: MoviesService, private route: ActivatedRoute) {
 
   }
@@ -27,10 +29,12 @@ export class SearchComponent {
 
 
   search() {
+    this.isLoading = true;
     this.dataService.searchMovie(this.searchString).subscribe(data => {
       this.searchMovies = data.results.slice(0, 10);
       if (this.searchMovies.length === 0) { this.isNoResult = true; }
       else { this.isNoResult = false; }
+      this.isLoading = false;
     });
   }
 

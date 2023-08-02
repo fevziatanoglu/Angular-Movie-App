@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input } from '@angular/core';
 import { MovieItem } from 'src/app/models/movieItem';
 import { MoviesService } from 'src/app/services/movies.service';
 
@@ -8,9 +8,12 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./top10-categories.component.css']
 })
 export class Top10CategoriesComponent {
+  @Input() isLoading = false;
+
 
   categories: any[] = [{ title: "Popular", tab: "popular" }, { title: "Top Rated", tab: "top_rated" }, { title: "Now Playing", tab: "now_playing" }, { title: "Up Coming", tab: "upcoming" }];
   currentCategory: string = "popular";
+
 
   movies: MovieItem[] = [];
 
@@ -23,7 +26,11 @@ export class Top10CategoriesComponent {
   }
 
   getMovies(category: string) {
-    this.dataService.getMoviesByCategory(category).subscribe(data => {  this.movies = data.results;  });
+    this.isLoading = true;
+    this.dataService.getMoviesByCategory(category).subscribe(data => { 
+       this.movies = data.results; 
+        this.isLoading = false;
+      });
   }
 
   setCategory(category: string) {

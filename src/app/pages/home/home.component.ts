@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   
   query: string = '';
+  isLoading: boolean = false;
 
   setQuery(query: string){
     this.query = query;

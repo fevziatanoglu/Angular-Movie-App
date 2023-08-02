@@ -15,6 +15,7 @@ import { MovieSearchItemComponent } from './components/movie-search-item/movie-s
 import { MovieListItemComponent } from './components/movie-list-item/movie-list-item.component';
 import { MovieSliderItemComponent } from './components/movie-slider-item/movie-slider-item.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HeaderComponent } from './components/header/header.component';
     MovieListItemComponent,
     MovieSliderItemComponent,
     HeaderComponent,
+    LoadingScreenComponent,
   ],
   imports: [
     BrowserModule,

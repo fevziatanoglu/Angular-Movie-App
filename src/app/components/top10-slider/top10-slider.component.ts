@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./top10-slider.component.css']
 })
 export class Top10SliderComponent {
+
+  @Input() isLoading = false;
 
   top10: any[] = [];
   sliderTransform: number = 0;
@@ -20,7 +22,11 @@ export class Top10SliderComponent {
   }
 
   getTop10() {
-    this.dataService.getMoviesByCategory("popular").subscribe((data: any) => { this.top10 = data.results.slice(0, 10); });
+    this.isLoading = true;
+    this.dataService.getMoviesByCategory("popular").subscribe((data: any) => {
+       this.top10 = data.results.slice(0, 10); 
+        this.isLoading = false;
+      });
   }
 
 

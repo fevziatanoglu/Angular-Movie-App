@@ -11,7 +11,8 @@ export class WatchlistComponent {
 
   savedMovies: any[] = [];
   movies: any[] = [];
-  //  JSON.parse(localStorage.getItem('myData'));
+
+  isLoading: boolean = false;
 
   constructor(private dataService: MoviesService) { }
 
@@ -21,11 +22,11 @@ export class WatchlistComponent {
   }
 
   getMovies() {
-
+    this.isLoading = true;
     this.savedMovies.forEach((movieId) => {
       this.dataService.getDetailsById(movieId).subscribe(data => { this.movies.push(data); })
     })
-
+    this.isLoading = false;
   }
 
 }
