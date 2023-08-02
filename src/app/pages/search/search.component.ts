@@ -13,6 +13,9 @@ export class SearchComponent {
   searchMovies: any[] = [];
   isNoResult: boolean = false;
 
+  headerTitle : string = "Search";
+  headerButtonImg : string = "../../../assets/images/Info-Button.svg";
+
   constructor(private dataService: MoviesService, private route: ActivatedRoute) {
 
   }

@@ -1,27 +1,6 @@
 <div class="d-flex flex-column  justify-content-start  gap-4 py-3">
     <!-- details header -->
-    <div class="d-flex flex-row justify-content-between align-items-center px-3 d-flex d-md-none">
-        <!-- return button -->
-        <a href="/home">
-            <img src="../../../assets/images/Arrow-Left.svg" alt="leftarrow">
-        </a>
-        <!-- header title -->
-        <h3 class="fw-bold text-light">Detail</h3>
-        <!-- add whatchlist button -->
-        <div (click)="addMovieLocalStorage()">
-
-            <img *ngIf="savedMovies.includes(this.movieId)" src="../../../assets/images/Save-Button.svg">
-
-            <img style="height: 1.5rem;" *ngIf="!savedMovies.includes(this.movieId)"
-                src="../../../assets/images/Star.svg">
-
-
-
-
-
-        </div>
-
-    </div>
+    <app-header [title]=this.headerTitle [buttonImgUrl]=this.headerButtonImg (buttonFunction)="addMovieLocalStorage()" />
 
     <!-- movie title div -->
     <div class="backdrop-container d-flex flex-row  justify-content-around align-items-end px-3">

@@ -14,6 +14,7 @@ import { WatchlistComponent } from './pages/watchlist/watchlist.component';
 import { MovieSearchItemComponent } from './components/movie-search-item/movie-search-item.component';
 import { MovieListItemComponent } from './components/movie-list-item/movie-list-item.component';
 import { MovieSliderItemComponent } from './components/movie-slider-item/movie-slider-item.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MovieSliderItemComponent } from './components/movie-slider-item/movie-s
     MovieSearchItemComponent,
     MovieListItemComponent,
     MovieSliderItemComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

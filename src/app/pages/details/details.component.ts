@@ -15,6 +15,9 @@ export class DetailsComponent {
   movieId: string = "";
   reviews: Review[] = [];
 
+  headerTitle : string = "Details"
+  headerButtonImg : string = "../../../assets/images/Save-Button.svg"
+
   tabs: string[] = ["About Movie", "Reviews", "Cast"]
   currentTab: string = "About Movie";
 
@@ -25,8 +28,9 @@ export class DetailsComponent {
 
   ngOnInit() {
     this.savedMovies = JSON.parse(localStorage.getItem("movies") || "[]");
+    if(this.savedMovies.includes(this.movieId)){this.headerButtonImg = "../../../assets/images/Star.svg"};
     this.route.params.subscribe(params => this.movieId = params["id"]);
-
+ 
     this.getDetails(this.movieId);
     this.getReview(this.movieId);
   }
@@ -60,8 +64,11 @@ export class DetailsComponent {
   addMovieLocalStorage() {
     if (this.savedMovies.includes(this.movieId)) {
       this.savedMovies = this.savedMovies.filter(movieId => movieId !== this.movieId);
+      this.headerButtonImg = "../../../assets/images/Save-Button.svg"
     } else {
       this.savedMovies.push(this.movieId);
+      this.headerButtonImg = "../../../assets/images/Star.svg"
+
     }
     localStorage.setItem('movies', JSON.stringify(this.savedMovies));
   }

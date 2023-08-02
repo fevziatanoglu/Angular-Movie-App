@@ -1,0 +1,12 @@
+<div class="d-flex flex-row justify-content-between align-items-center px-3 d-flex d-md-none">
+    <!-- return button -->
+    <div (click)="goBack()">
+        <img src="../../../assets/images/Arrow-Left.svg" alt="leftarrow">
+    </div>
+    <!-- header title -->
+    <h3 class="fw-bold text-light">{{title}}</h3>
+    <!-- add whatchlist button -->
+    <div (click)="this.buttonFunction.emit()">
+        <img  src={{this.buttonImgUrl}}>
+    </div>
+</div>
