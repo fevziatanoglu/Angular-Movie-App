@@ -25,7 +25,7 @@ export class MoviesService {
     return this.http.get<Review>(enviroment.apiUrl + `/movie/${movieId}/reviews?api_key=` +  enviroment.apiKey)
   }
 
-  searchMovie(query: string){
-    return this.http.get<any>(enviroment.apiUrl + "/search/movie?api_key=" +  enviroment.apiKey + "&query=" + query)
+  searchMovie(query: string):Observable<MoviesData>{
+    return this.http.get<MoviesData>(enviroment.apiUrl + "/search/movie?api_key=" +  enviroment.apiKey + "&query=" + query)
   }
 }
