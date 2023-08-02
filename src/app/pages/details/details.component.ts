@@ -35,7 +35,6 @@ export class DetailsComponent {
     this.isLoading = true;
     this.dataService.getDetailsById(id).subscribe((data: any) => {
       this.movie = data;
-      console.log(this.movie);
       this.isLoading = false;
     })
 

@@ -16,24 +16,8 @@ button {
     border: none;
 }
 
-.moive-item {
-    text-decoration: none; 
-    color: white;
-}
-
-.movie-item:hover{
-    border: 1px solid white;
-}
-
-.movie-img {
-    height: 50vh;
-    width: auto;
-    border-radius: 1rem;
-}
-
-.icon-img {
-    height: 1.5rem;
-    width: auto;
+.movie-link{
+    text-decoration: none;
 }
 
 @media (max-width: 767px) {

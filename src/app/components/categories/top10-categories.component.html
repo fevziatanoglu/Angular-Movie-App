@@ -3,15 +3,15 @@
     <!-- categories tab -->
     <div class="row row-cols-4 justify-content-lg-between justify-content-around">
 
-        <div class="tab fw-bold text-light d-flex justify-content-center py-3" *ngFor="let category of categories"
+        <div class="tab fw-bold text-light d-flex justify-content-center  py-3" *ngFor="let category of categories"
             (click)="setCategory(category.tab)" [class.active-tab]="isTagActive(category.tab)">
             {{category.title}} </div>
     </div>
 
-    <!-- films -->
-    <div class=" row row-cols-1 gap-lg-5  justify-content-between  py-5 ">
-        <a *ngFor="let movie of movies" class="movie-item my-2" href="details/{{movie.id}}">
-            <img class="bg-light" alt="movieimg" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
-            <!-- {{movie.title}} -->
+    <!-- movies -->
+    <div class=" row row-cols-1 gap-lg-2 gap-1 justify-content-lg-between  py-5 ">
+        <!-- movie item -->
+        <a class="movie-link d-flex justify-content-center align-items-center" *ngFor="let movie of movies" href="details/{{movie.id}}">
+            <app-movie-list-item [movie]="movie"/>
         </a>
     </div>

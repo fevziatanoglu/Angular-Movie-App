@@ -14,38 +14,7 @@
     gap: 5vw;
 }
 
-.slider-movie-item {
-    position: relative;
-    width: 15vw;
-    height: auto;
-    border: 1px solid rgba(255, 255, 255, 0);
-}
 
-.slider-item-number{
-    position: absolute;
-    bottom : -66px;
-    left : -20px ;
-    z-index: 100;
-
-    -webkit-text-stroke: .8px #0296E5;
-    color: #242A32;
-    font-size: 8rem;
-    font-weight: 600;
-}
-
-.slider-movie-item:hover {
-    border-radius: 1.5rem;
-    border: 3px solid #0296E5;
-    transition: 100ms;
-    cursor: pointer;
-}
-
-
-.slider-movie-item img {
-    border-radius: 1.5rem;
-    height: 100%;
-    width: 100%;
-}
 
 button{
     height: 10vh;
@@ -76,9 +45,4 @@ button:disabled{
         height: 30vh;
         width: auto;
     } */
-
-    .slider-movie-item {
-        width: 45vw;
-        height: auto;
-    }
 }

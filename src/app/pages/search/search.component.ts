@@ -26,7 +26,6 @@ export class SearchComponent {
   search() {
     this.dataService.searchMovie(this.searchString).subscribe(data => {
       this.searchMovies = data.results.slice(0, 5);
-      console.log(this.searchMovies);
 
       if (this.searchMovies.length === 0) { this.isNoResult = true; }
       else { this.isNoResult = false; }

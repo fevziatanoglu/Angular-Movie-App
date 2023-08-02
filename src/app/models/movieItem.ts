@@ -1,3 +1,5 @@
+import { Genres } from "./movieDetails";
+
 export interface MoviesData{
     page: number;
     results: MovieItem[];
@@ -11,6 +13,8 @@ export interface MovieItem{
     id : number;
     title : string;
     vote_average : number;
-    relase_date : string;
+    release_date : string;
     genre_ids : number[];
+    runtime : number | null;
+    genres : Genres[];
 }

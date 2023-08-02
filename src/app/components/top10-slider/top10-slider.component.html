@@ -15,11 +15,10 @@
     <!-- slider -->
     <div class="slider d-flex flex-row " [style.transform]=" 'translateX(' +  sliderTransform  + 'px)' ">
         <!-- slider item -->
-        <a class="slider-movie-item" *ngFor="let movie of top10; let i =index" href="details/{{movie.id}}">
-            <img class="shadow-lg" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
-            <!-- movie number -->
-            <div class="slider-item-number">{{i+1}}</div>
+        <a *ngFor="let movie of top10; let i =index" href="details/{{movie.id}}">
+            <app-movie-slider-item [number]="i+1" [movie]="movie"/>
         </a>
+        
     </div>
 
 

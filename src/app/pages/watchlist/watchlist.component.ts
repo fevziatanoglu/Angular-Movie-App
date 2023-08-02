@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MovieDetails } from 'src/app/models/movieDetails';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -16,11 +17,7 @@ export class WatchlistComponent {
 
   ngOnInit() {
     this.savedMovies = JSON.parse(localStorage.getItem('movies') || "[]");
-
     this.getMovies(); 
-
-  
-
   }
 
   getMovies() {

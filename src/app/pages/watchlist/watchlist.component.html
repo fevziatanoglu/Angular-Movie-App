@@ -14,39 +14,8 @@
     <div class=" d-flex flex-column gap-5 p-4">
 
         <!-- movie -->
-        <a class="moive-item d-flex flex-row justify-content-start gap-3 " 
-        *ngFor="let movie of movies"
-            href="details/{{movie.id}}"
-            >
-            <img class="movie-img" src="https://image.tmdb.org/t/p/original/{{movie?.poster_path}}" alt="poster">
-
-            <div class="d-flex flex-column align-items-lg-center gap-2 w-100">
-                <h1>{{movie.title}}</h1>
-
-                <div class="d-flex  gap-1" style="color: #cd720b;">
-                    <img class="icon-img" src="../../../assets/images/Star.png" alt="icon">
-                    {{movie?.vote_average.toFixed(2)}}
-                </div>
-
-                <div class="d-flex  gap-1">
-                    <img class="icon-img" src="../../../assets/images/CalendarBlank.png" alt="icon">
-                    {{movie?.release_date.slice(0,4) || "Year"}}
-                </div>
-
-                <div class="d-flex   gap-1">
-                    <img class="icon-img" src="../../../assets/images/Clock.png" alt="icon">
-                    {{movie?.runtime + " min" || "Minutes"}}
-                </div>
-
-                <div class="d-flex   gap-1">
-                    <img class="icon-img" src="../../../assets/images/Ticket.png" alt="icon">
-                    {{movie?.genre || "Genre" }}
-                </div>
-
-
-
-            </div>
-
+        <a class="moive-item d-flex flex-row justify-content-start gap-3 " *ngFor="let movie of movies" href="details/{{movie.id}}">
+            <app-movie-search-item [movie]="movie"/>
         </a>
 
 

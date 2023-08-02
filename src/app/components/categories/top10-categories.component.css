@@ -9,21 +9,13 @@
     ;
 }
 
-.movie-item {
+.movie-link {
     width: 20vw;
     height: auto;
     border-top: 1px solid rgba(255, 255, 255, 0);
 }
 
-.movie-item:hover{
-    cursor: pointer;
-    border-top: 1px solid white;
-}
 
-.movie-item img {
-    height: 100%;
-    width: 100%;
-}
 
 .active-tab {
     border-bottom: 2px solid #058bd4;
@@ -32,7 +24,7 @@
 
 
 @media (max-width: 767px) {
-    .movie-item {
+    .movie-link {
         width: 32vw;
         height: auto;
     }   

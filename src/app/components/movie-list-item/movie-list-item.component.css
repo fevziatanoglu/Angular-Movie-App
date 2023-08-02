@@ -1,0 +1,25 @@
+
+.movie-item {
+    width: 20vw;
+    height: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0);
+}
+
+
+.movie-item:hover {
+    border: 3px solid #0296E5;
+    transition: 100ms;
+    cursor: pointer;
+}
+
+.movie-item img {
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .movie-item {
+        width: 32vw;
+        height: auto;
+    }   
+}
