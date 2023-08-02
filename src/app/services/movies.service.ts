@@ -1,6 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { enviroment } from '../enviroments/enviroment';
+import { MovieDetails } from '../models/movieDetails';
+import { Observable } from 'rxjs';
+import { Review } from '../models/movieReview';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,34 +15,34 @@ export class MoviesService {
 
 
   getTopMovies() {
-    return this.http.get<any>("https://api.themoviedb.org/3/movie/popular" + this.apiKey)
+    return this.http.get<any>(enviroment.apiUrl + "/movie/popular?api_key=" + enviroment.apiKey)
   }
 
   getNowPlayingMovies() {
-    return this.http.get<any>("https://api.themoviedb.org/3/movie/now_playing" + this.apiKey)
+    return this.http.get<any>(enviroment.apiUrl + "/movie/now_playing?api_key=" +  enviroment.apiKey)
   }
 
   getTopRatedgMovies() {
-    return this.http.get<any>("https://api.themoviedb.org/3/movie/top_rated" + this.apiKey)
+    return this.http.get<any>(enviroment.apiUrl + "/movie/top_rated?api_key=" +  enviroment.apiKey)
   }
 
   getPopularMovies() {
-    return this.http.get<any>("https://api.themoviedb.org/3/movie/popular" + this.apiKey)
+    return this.http.get<any>(enviroment.apiUrl + "/movie/popular?api_key=" +  enviroment.apiKey)
   }
 
-  getMoviesByCategory(category: string){
-    return this.http.get<any>(`https://api.themoviedb.org/3/movie/${category}` + this.apiKey)
+  getMoviesByCategory  (category: string){
+    return  this.http.get<any>(enviroment.apiUrl + `/movie/${category}?api_key=` +  enviroment.apiKey)
   }
 
-  getDetailsById(movieId: string){
-    return this.http.get<any>(`https://api.themoviedb.org/3/movie/${movieId}language=en-US` + this.apiKey)
+  getDetailsById(movieId: string) : Observable<MovieDetails>{
+    return this.http.get<MovieDetails>(enviroment.apiUrl + `/movie/${movieId}language=en-US?api_key=` +  enviroment.apiKey)
   }
 
-  getReviewById(movieId: string){
-    return this.http.get<any>(`https://api.themoviedb.org/3/movie/${movieId}/reviews` + this.apiKey)
+  getReviewById(movieId: string) : Observable<Review>{
+    return this.http.get<Review>(enviroment.apiUrl + `/movie/${movieId}/reviews?api_key=` +  enviroment.apiKey)
   }
 
   searchMovie(query: string){
-    return this.http.get<any>("https://api.themoviedb.org/3/search/movie" + this.apiKey + "&query=" + query)
+    return this.http.get<any>(enviroment.apiUrl + "/search/movie?api_key=" +  enviroment.apiKey + "&query=" + query)
   }
 }

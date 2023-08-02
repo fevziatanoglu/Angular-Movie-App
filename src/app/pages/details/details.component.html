@@ -9,11 +9,12 @@
         <h3 class="fw-bold text-light">Detail</h3>
         <!-- add whatchlist button -->
         <div (click)="addMovieLocalStorage()">
-           
+
             <img *ngIf="savedMovies.includes(this.movieId)" src="../../../assets/images/AddWhatchList.png">
-            
-            <img style="height: 1.5rem;" *ngIf="!savedMovies.includes(this.movieId)" src="../../../assets/images/Star.png">
-          
+
+            <img style="height: 1.5rem;" *ngIf="!savedMovies.includes(this.movieId)"
+                src="../../../assets/images/Star.png">
+
 
 
 
@@ -25,29 +26,29 @@
     <!-- movie title div -->
     <div class="backdrop-container d-flex flex-row  justify-content-around align-items-end px-3">
         <!-- backdrop image -->
-        <img class="backdrop-img align-self-start" src="https://image.tmdb.org/t/p/original/{{movie?.backdrop_path}}"
+        <img class="backdrop-img align-self-start" src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}"
             alt="movie-backdrop">
         <!-- title and poster -->
-        <img class="poster-img" src="https://image.tmdb.org/t/p/original/{{movie?.poster_path}}">
-        <h1 class="text-light text-center">{{movie?.title}}</h1>
+        <img class="poster-img" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
+        <h1 class="text-light text-center">{{movie.title}}</h1>
     </div>
 
     <!-- movie infos -->
-    <div class="movie-infos d-flex flex-row row-cols-3 justify-content-between px-5  ">
+    <div class="movie-infos d-flex flex-row gap-2  row-cols-3 align-items-center justify-content-center  px-5  ">
 
         <div class="d-flex justify-content-center align-items-center gap-1">
             <img src="../../../assets/images/CalendarBlank.png" alt="icon">
-            {{movie?.release_date.slice(0,4)}}
+            {{movie.release_date.slice(0,4)}}
         </div>
 
         <div class="d-flex justify-content-center align-items-center  gap-1">
             <img src="../../../assets/images/Clock.png" alt="icon">
-            {{movie?.runtime +" min" }}
+            {{movie.runtime +" min" }}
         </div>
 
         <div class="d-flex justify-content-center align-items-center  gap-1">
             <img src="../../../assets/images/Ticket.png" alt="icon">
-            {{movie?.genres[0].name}}
+            {{movie.genres[0].name}}
         </div>
     </div>
 
@@ -65,12 +66,12 @@
     <div class="text-light p-2 px-3">
 
         <!-- about movie -->
-        <div *ngIf="isTabActive('About Movie')" [style.display]="'flex'" class="">{{movie?.overview}}</div>
+        <div *ngIf="isTabActive('About Movie')" [style.display]="'flex'" class="">{{movie.overview}}</div>
 
         <!-- reviews -->
         <div *ngIf="isTabActive('Reviews')" [style.display]="'flex'" class="d-flex flex-column gap-4">
             <!-- review -->
-            <div *ngFor="let review of reviews.slice(0,3)" class="d-flex flex-row gap-5">
+            <div *ngFor="let review of reviews?.slice(0,3)" class="d-flex flex-row gap-5">
                 <!-- img and rate -->
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <img src="../../../assets/images/user.png" alt="usericon">
@@ -79,7 +80,7 @@
                 <!-- name and comment -->
                 <div class="d-flex flex-column justify-content-center align-items-start">
                     <div class="fw-bold">{{review.author}}</div>
-                    <div class="comment">{{review.content.slice(0,150) + "..."}}</div>
+                    <div class="comment">{{review.content}}</div>
                 </div>
             </div>
         </div>
