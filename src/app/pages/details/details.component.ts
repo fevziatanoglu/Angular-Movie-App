@@ -21,7 +21,7 @@ export class DetailsComponent {
   headerButtonImg : string = "../../../assets/images/Save-Button.svg"
 
   tabs: string[] = ["About Movie", "Reviews", "Cast"]
-  currentTab: string = "Cast";
+  currentTab: string = "About Movie";
 
   savedMovies: string[] = [];
   isLoading: boolean = false;
@@ -57,8 +57,7 @@ export class DetailsComponent {
 
   getCredits(id: string) {
     this.dataService.getCreditsById(id).subscribe((data:any) => {
-      this.casts = data.cast.slice(0,10);
-      console.log(this.casts);
+      this.casts = data.cast.slice(0,8);
     })
   }
 
