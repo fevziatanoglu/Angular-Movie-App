@@ -57,7 +57,7 @@ export class DetailsComponent {
 
   getCredits(id: string) {
     this.dataService.getCreditsById(id).subscribe((data:any) => {
-      this.casts = data.cast.slice(0,8);
+      this.casts = data.cast.slice(0,7);
     })
   }
 
