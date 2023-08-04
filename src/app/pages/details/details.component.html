@@ -1,6 +1,6 @@
 <app-loading-screen [isLoading]="isLoading" />
 
-<div class="d-flex flex-column  justify-content-start  gap-4 py-3">
+<div *ngIf="movie !== undefined;" class="d-flex flex-column  justify-content-start  gap-4 py-3">
     <!-- details header -->
     <app-header [title]=this.headerTitle [buttonImgUrl]=this.headerButtonImg
         (buttonFunction)="addMovieLocalStorage()" />
