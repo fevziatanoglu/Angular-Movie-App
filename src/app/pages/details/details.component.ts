@@ -40,7 +40,7 @@ export class DetailsComponent {
 
   getDetails(id: string) {
     this.isLoading = true;
-    this.dataService.getDetailsById(id).subscribe((data: any) => {
+     this.dataService.getDetailsById(id).subscribe((data: any) => {
       this.movie = data;
       this.isLoading = false;
     })

@@ -39,7 +39,7 @@ export class SearchComponent {
   }
 
   handleSearch() {
-    if (this.searchString.length > 1) { this.search(); }
+    if (this.searchString.length > 2) { this.search(); }
   }
 
   setSearchString(query: string) { this.searchString = query; }

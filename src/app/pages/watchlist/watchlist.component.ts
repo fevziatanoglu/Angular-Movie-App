@@ -9,6 +9,8 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class WatchlistComponent {
 
+  headerTitle: string = "Watch List"
+
   savedMovies: string[] = [];
   movies: MovieDetails[] = [];
 

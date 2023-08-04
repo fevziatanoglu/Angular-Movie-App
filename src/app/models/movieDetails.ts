@@ -1,8 +1,8 @@
 export interface MovieDetails {
     id: number;
     title: string;
-    backdrop_path : any;
-    poster_path : string;
+    backdrop_path : string | undefined;
+    poster_path : string | undefined;
     overview : string;
     genres : Genres[];
     release_date : string;
