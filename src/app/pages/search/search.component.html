@@ -17,7 +17,7 @@
         <!-- submit -->
         <button class="btn btn-outline-secondary col-2 d-flex flex-column  align-items-center justify-content-center"
             (click)="handleSearch()">
-            <img src="../../../assets/images/Search-Button.svg">
+            <img src="../../../assets/images/Search-Button.svg" alt="search-button">
         </button>
     </div>
 
@@ -34,7 +34,7 @@
         <!-- no result div -->
         <div *ngIf="isNoResult" [style.display]="'none'"
             class=" not-found-div p-5  d-flex flex-column justify-content-center align-items-center text-center">
-            <img src="../../../assets/images/NoResult.png">
+            <img src="../../../assets/images/NoResult.png" alt="no-result">
             <h1 class="text-light">We Are Sorry , We Can Not Find The Movie :(</h1>
             <p class="text-secondary px-2">Find your movie by Type, Title, Categories, Year, etc.</p>
         </div>

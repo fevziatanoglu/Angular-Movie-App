@@ -7,6 +7,6 @@
     <h3 class="fw-bold text-light">{{title}}</h3>
     <!-- add whatchlist button -->
     <div (click)="this.buttonFunction.emit()">
-        <img  src={{this.buttonImgUrl}}>
+        <img  *ngIf="this.buttonImgUrl" src={{this.buttonImgUrl}} alt="icon">
     </div>
 </div>
