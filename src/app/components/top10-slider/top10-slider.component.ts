@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MovieItem } from 'src/app/models/movieItem';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -8,9 +9,8 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class Top10SliderComponent {
 
-  @Input() isLoading = false;
+  @Input() top10: MovieItem[] = [];
 
-  top10: any[] = [];
   sliderTransform: number = 0;
 
   constructor(private dataService: MoviesService) {
@@ -18,17 +18,10 @@ export class Top10SliderComponent {
   }
 
   ngOnInit() {
-    this.getTop10();
+   
   }
 
-  getTop10() {
-    this.isLoading = true;
-    this.dataService.getMoviesByCategory("popular").subscribe((data: any) => {
-       this.top10 = data.results.slice(0, 10); 
-        this.isLoading = false;
-      });
-  }
-
+ 
 
   slideLeftButton() {
     if (this.sliderTransform < 0) {

@@ -29,16 +29,20 @@ export class DetailsComponent {
   constructor(private dataService: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.savedMovies = JSON.parse(localStorage.getItem("movies") || "[]");
-    if(this.savedMovies.includes(this.movieId)){this.headerButtonImg = "../../../assets/images/Star.svg"};
     this.route.params.subscribe(params => this.movieId = params["id"]);
+
+    this.savedMovies = JSON.parse(localStorage.getItem("movies") || "[]");
+
+    if(this.savedMovies.includes(this.movieId)){this.headerButtonImg = "../../../assets/images/Star.svg"};
+
+   
  
     this.getDetails(this.movieId);
     this.getReview(this.movieId);
     this.getCredits(this.movieId);
   }
 
-  getDetails(id: string) {
+  getDetails(id: string): void {
     this.isLoading = true;
      this.dataService.getDetailsById(id).subscribe((data: any) => {
       this.movie = data;
@@ -47,7 +51,7 @@ export class DetailsComponent {
 
   }
 
-  getReview(id: string) {
+  getReview(id: string): void {
     this.isLoading = true;
     this.dataService.getReviewById(id).subscribe((data:any) => {
       this.reviews = data.results;
@@ -55,7 +59,7 @@ export class DetailsComponent {
     });
   }
 
-  getCredits(id: string) {
+  getCredits(id: string): void {
     this.dataService.getCreditsById(id).subscribe((data:any) => {
       this.casts = data.cast.slice(0,7);
     })
@@ -66,11 +70,11 @@ export class DetailsComponent {
     return this.currentTab === tab;
   }
 
-  setTab(tab: string) {
+  setTab(tab: string): void {
     this.currentTab = tab;
   }
 
-  addMovieLocalStorage() {
+  addMovieLocalStorage(): void {
     if (this.savedMovies.includes(this.movieId)) {
       this.savedMovies = this.savedMovies.filter(movieId => movieId !== this.movieId);
       this.headerButtonImg = "../../../assets/images/Save-Button.svg"
