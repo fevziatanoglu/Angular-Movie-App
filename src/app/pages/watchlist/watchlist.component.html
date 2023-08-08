@@ -14,11 +14,13 @@
 
 
         <!-- empty watchlist div -->
-        <div *ngIf="" [style.display]="'none'"
+        <div *ngIf="savedMovies" [style.display]="'none'"
             class=" empty-div p-5  d-flex flex-column justify-content-center align-items-center text-center">
-            <img src="../../../assets/images/NoResult.png" alt="no-result">
-            <h1 class="text-light">We Are Sorry , We Can Not Find The Movie :(</h1>
-            <p class="text-secondary px-2">Find your movie by Type, Title, Categories, Year, etc.</p>
+            <img src="../../../assets/images/Popcorn.png" alt="no-result">
+            <h1 class="text-light">You don't have any saved films</h1>
+          
+            <app-search-bar></app-search-bar>
+            <p class="text-secondary px-2">Find your movie by Type, Title, Categories, Year, etc.</p> 
         </div>
     </div>
 
