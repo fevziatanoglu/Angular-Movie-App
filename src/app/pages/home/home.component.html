@@ -17,9 +17,18 @@
         </a>
     </form>
 
+
+    
     <!-- top 10 slider -->
-    <app-top10-slider [top10]="top10"></app-top10-slider>
-    <!-- top 10 categories -->
-    <app-top10-categories [isLoading]="isLoading"></app-top10-categories>
-    <app-footer></app-footer>
+    <app-top10-slider 
+    [top10]="top10"/>
+
+    <!-- top categories -->
+    <app-top10-categories 
+    [categories] = "categories" 
+    [movies]="movies" [currentCategory]="currentCategory" 
+    (setCategory)="setCategory($event)"/>
+
+    <!-- footer -->
+    <app-footer/>
 </div>

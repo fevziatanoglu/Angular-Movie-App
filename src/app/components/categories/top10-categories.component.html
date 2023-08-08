@@ -4,7 +4,7 @@
     <div class="row row-cols-4 justify-content-lg-between justify-content-around">
 
         <div class="tab fw-bold text-light d-flex justify-content-center  py-3" *ngFor="let category of categories"
-            (click)="setCategory(category.tab)" [class.active-tab]="isTagActive(category.tab)">
+            (click)="this.setCategory.emit(category.tab)" [class.active-tab]="isTagActive(category.tab)">
             {{category.title}} </div>
     </div>
 

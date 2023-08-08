@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Tab } from 'src/app/models/categorieTabs';
+import { MovieItem } from 'src/app/models/movieItem';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -8,7 +10,13 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class HomeComponent {
 
+  // slider
   top10: any[] = [];
+
+  // home movies list
+  categories: Tab[] = [{ title: "Popular", tab: "popular" }, { title: "Top Rated", tab: "top_rated" }, { title: "Now Playing", tab: "now_playing" }, { title: "Up Coming", tab: "upcoming" }];
+  currentCategory : string = "popular";
+  movies: MovieItem[] = [];
 
   query: string = '';
   isLoading: boolean = false;
@@ -20,6 +28,7 @@ export class HomeComponent {
   ngOnInit(){
 
     this.getTop10();
+    this.getMovies(this.currentCategory);
   }
 
   setQuery(query: string){
@@ -35,5 +44,21 @@ export class HomeComponent {
       });
   }
 
+  // moves related category
+  getMovies(category: string) {
+    this.isLoading = true;
+    this.dataService.getMoviesByCategory(category).subscribe(data => { 
+       this.movies = data.results; 
+        this.isLoading = false;
+      });
+  }
+
+  // set category
+  setCategory(category: string) {
+    this.currentCategory = category;
+    this.getMovies(this.currentCategory);
+  }
+
+ 
 
 }

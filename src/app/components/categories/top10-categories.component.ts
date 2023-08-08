@@ -1,6 +1,7 @@
-import { Component , Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Tab } from 'src/app/models/categorieTabs';
 import { MovieItem } from 'src/app/models/movieItem';
-import { MoviesService } from 'src/app/services/movies.service';
+
 
 @Component({
   selector: 'app-top10-categories',
@@ -8,39 +9,24 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./top10-categories.component.css']
 })
 export class Top10CategoriesComponent {
-  @Input() isLoading = false;
+
+  @Input() categories: Tab[] = [];
+  @Input() currentCategory: string = "";
+  @Input() movies: MovieItem[] = [];
+  @Output() setCategory: EventEmitter<string> = new EventEmitter();
 
 
-  categories: any[] = [{ title: "Popular", tab: "popular" }, { title: "Top Rated", tab: "top_rated" }, { title: "Now Playing", tab: "now_playing" }, { title: "Up Coming", tab: "upcoming" }];
-  currentCategory: string = "popular";
-
-
-  movies: MovieItem[] = [];
-
-  constructor(private dataService: MoviesService) {
+  constructor() {
 
   }
 
   ngOnInit() {
-    this.getMovies(this.currentCategory);
+   
   }
 
-  getMovies(category: string) {
-    this.isLoading = true;
-    this.dataService.getMoviesByCategory(category).subscribe(data => { 
-       this.movies = data.results; 
-        this.isLoading = false;
-      });
-  }
+   // check tab buttons
+   isTagActive(category: string): boolean {return category === this.currentCategory;}
 
-  setCategory(category: string) {
-    this.currentCategory = category;
-    this.getMovies(this.currentCategory);
-  }
-
-  isTagActive(category: string): boolean {
-    return category === this.currentCategory
-  }
 
 
 
