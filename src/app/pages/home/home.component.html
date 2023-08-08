@@ -1,24 +1,11 @@
   <!-- loading screen -->
     <app-loading-screen [isLoading]="isLoading"/>
 
-    <div class="container-md bg-main">
+    <div class="container-md">
     
-  
-    <!-- search input -->
-    <form class="d-flex flex-row align-items-stretch mt-5 px-3 input-group mb-3">
-        <!-- label -->
-        <label class="text-light fs-3 px-2">What do you want to watch ?</label>
-        <!-- input -->
-        <input  #searchInput class="col-10 py-2 px-4 input" type="text"  placeholder="Search..." (keyup)="setQuery(searchInput.value)">
-        <!-- submit -->
-        <a class="btn btn-outline-secondary search-button col-2 d-flex flex-column  align-items-center justify-content-center"
-        href="search/{{query}}">
-            <img src="../../../assets/images/Search-Button.svg" alt="search-button">
-        </a>
-    </form>
+    <!-- search -->
+    <app-search-bar [title]="searchTitle"></app-search-bar>
 
-
-    
     <!-- top 10 slider -->
     <app-top10-slider 
     [top10]="top10"/>

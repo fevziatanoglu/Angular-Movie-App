@@ -1,0 +1,14 @@
+
+
+
+<form class="d-flex flex-row align-items-stretch mt-5 px-3 input-group mb-3">
+    <!-- label -->
+    <label class="text-light fs-3 px-2 col-12">{{title}}</label>
+    <!-- input -->
+    <input  #searchInput class="col-10 py-2 px-4 input" type="text"  placeholder="Search..." (keyup)="setQuery(searchInput.value)">
+    <!-- submit -->
+    <a class="btn btn-outline-secondary search-button col-2 d-flex flex-column  align-items-center justify-content-center"
+    href="search/{{query}}">
+        <img src="../../../assets/images/Search-Button.svg" alt="search-button">
+    </a>
+</form>

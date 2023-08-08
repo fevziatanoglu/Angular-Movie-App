@@ -18,6 +18,8 @@ export class HomeComponent {
   currentCategory : string = "popular";
   movies: MovieItem[] = [];
 
+  searchTitle: string = "What do you want to watch?"
+
   query: string = '';
   isLoading: boolean = false;
 
